@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile preview</title>
+<style>
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  section { padding: 32px 16px 48px; }
+  .dark { background: #0d1117; color: #8b949e; }
+  .light { background: #ffffff; color: #59636e; }
+  .label { max-width: 900px; margin: 0 auto 16px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+  .readme { max-width: 900px; margin: 0 auto; }
+  .readme p { margin: 0 0 16px; }
+  .readme img { max-width: 100%; box-sizing: content-box; vertical-align: middle; }
+  .readme a { text-decoration: none; }
+</style>
+</head>
+<body>
+<section class="dark">
+  <div class="label">GitHub dark (#0d1117)</div>
+  <div class="readme" data-readme></div>
+</section>
+<section class="light">
+  <div class="label">GitHub light (#ffffff)</div>
+  <div class="readme" data-readme></div>
+</section>
+
+<template id="readme">
+<p align="center">
+  <img src="assets/header.svg" width="100%" alt="0xPunisher: builder and bot developer, top 0.1% among arbitrage bots on Polymarket, creator of CrawlScan" />
+</p>
+
+<p align="center">
+  <a href="https://x.com/0x_Punisher"><img src="assets/btn-x.svg" height="44" alt="X: @0x_Punisher" /></a>
+  &nbsp;
+  <a href="https://crawlscan.fun"><img src="assets/btn-crawlscan.svg" height="44" alt="CrawlScan: crawlscan.fun" /></a>
+</p>
+
+<p align="center">
+  <img src="assets/stats.svg" width="49%" alt="GitHub numbers for 0xPunisher: stars earned, commits and contributions in the last 12 months, repositories, current and longest streak" />
+  <img src="assets/languages.svg" width="49%" alt="Top 6 languages by code size across 0xPunisher's own repositories" />
+</p>
+
+<p align="center">
+  <img src="assets/activity.svg" width="100%" alt="Contribution activity of 0xPunisher over the last 12 months, with total contributions and streaks" />
+</p>
+</template>
+<script>
+  const markup = document.getElementById('readme').innerHTML;
+  document.querySelectorAll('[data-readme]').forEach(el => { el.innerHTML = markup; });
+</script>
+</body>
+</html>
